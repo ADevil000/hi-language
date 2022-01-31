@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+name:           hw3
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/@ADevil000/hw3#readme>
+homepage:       https://github.com/@ADevil000/hw3#readme
+bug-reports:    https://github.com/@ADevil000/hw3/issues
+author:         Kolosov Artyom
+maintainer:     artem.kolosov2000@gmail.com
+copyright:      2022 Kolosov Artyom
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/@ADevil000/hw3
+
+library
+  exposed-modules:
+      HW3.Base
+      HW3.Parser
+      HW3.Pretty
+      HW3.Evaluator
+      HW3.Action
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bits
+    , bytestring
+    , containers
+    , directory
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , random
+    , scientific
+    , serialise
+    , template-haskell
+    , text
+    , time
+    , transformers
+    , zlib
+  default-language: Haskell2010
+
+executable hw3
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , haskeline
+    , megaparsec
+    , hw3
+  default-language: Haskell2010
